@@ -31,7 +31,7 @@ export class ProductsController {
 
     return this.client
       .send({ cmd: 'find_one_product' }, { id })
-      .pipe(catchError((error) => throwError(() => new RpcException(error))));;
+      .pipe(catchError((error) => throwError(() => new RpcException(error))));
   }
 
   @Patch(':id')
@@ -39,7 +39,7 @@ export class ProductsController {
     
     return this.client
       .send({ cmd: 'update_product' }, { id, ...updateProductDto })
-      .pipe(catchError((error) => throwError(() => new RpcException(error))));;
+      .pipe(catchError((error) => throwError(() => new RpcException(error))));
   }
 
   @Delete(':id')
@@ -47,6 +47,6 @@ export class ProductsController {
 
     return this.client
       .send({ cmd: 'delete_product' }, { id })
-      .pipe(catchError((error) => throwError(() => new RpcException(error))));;
+      .pipe(catchError((error) => throwError(() => new RpcException(error))));
   }
 }
